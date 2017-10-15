@@ -1,0 +1,11 @@
+brew services start postgresql
+brew services stop postgresql
+brew services restart postgresql
+
+sudo apt-get update
+sudo apt-get install -y postgresql-9.5 postgresql-server-dev-9.5
+
+createuser -P -s -e db_username
+createdb -h localhost -U db_username MYAPPNAME_development
+
+psql -h localhost  -d giphy-react -U techsin -f migration.sql 

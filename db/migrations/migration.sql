@@ -1,0 +1,15 @@
+
+DROP TABLE comment;
+DROP TABLE link;
+
+CREATE TABLE IF NOT EXISTS comment (
+  id BIGSERIAL PRIMARY KEY,
+  gif_url VARCHAR(1024),
+  votes INTEGER,
+  link_id BIGSERIAL
+);
+
+CREATE TABLE IF NOT EXISTS link (
+  id BIGSERIAL PRIMARY KEY,
+  url VARCHAR(1024)
+);
